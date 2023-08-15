@@ -1,0 +1,187 @@
+ul.page-numbers {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 10px;
+  border-top: 1px dotted #ccc;
+}
+ul.page-numbers li {
+  margin: 0 5px;
+}
+ul.page-numbers li:hover {
+  color: var(--blue);
+}
+ul.page-numbers li a {
+  font-weight: 600;
+}
+ul.page-numbers li span {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.category-gallery-section ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.category-gallery-section ul li {
+  box-sizing: border-box;
+  padding: 10px;
+}
+.category-gallery-section ul li a {
+  display: block;
+  padding: 5px;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+.category-gallery-section ul li a figure {
+  overflow: hidden;
+  margin: 0;
+}
+.category-gallery-section ul li a figure img {
+  width: 100%;
+  height: auto;
+  transition: all 0.3s;
+  transform: scale(1.1);
+}
+.category-gallery-section ul li a figure figcaption {
+  position: relative;
+  padding: 10px;
+  background: var(--dark);
+  transition: all 0.3s;
+}
+.category-gallery-section ul li a figure figcaption h3 {
+  color: #fff;
+  font-weight: 600;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+}
+.category-gallery-section ul li a figure figcaption p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.category-gallery-section ul li a:hover figure img {
+  transform: scale(1.2);
+  transition: all 5s;
+  filter: url(#filter);
+}
+.category-gallery-section ul li a:hover figure figcaption {
+  background: var(--blue);
+}
+@media screen and (min-width:1000px) {
+  .category-gallery-section ul li {
+    width: 33.33%;
+  }
+}
+@media screen and (min-width:600px) and (max-width:1000px) {
+  .category-gallery-section ul li {
+    width: 50%;
+  }
+}
+@media screen and (max-width:600px) {
+  .category-gallery-section ul li {
+    width: 100%;
+  }
+}
+
+.category-webzin-section ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.category-webzin-section ul li {
+  box-sizing: border-box;
+  padding: 10px;
+}
+.category-webzin-section ul li .meta {
+  padding: 7px;
+  background: var(--dark);
+  border-top: 1px solid #aaa;
+  color: #fff;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+.category-webzin-section ul li .meta > * {
+  display: inline-block;
+}
+.category-webzin-section ul li .meta address {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.category-webzin-section ul li .meta b {
+  float: right;
+}
+.category-webzin-section ul li figure {
+  border-top: 10px solid rgba(170, 170, 170, 0.8);
+  background: #eee;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.category-webzin-section ul li figure img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.2);
+}
+.category-webzin-section ul li figure img:hover {
+  transform: scale(1.2);
+  transition: all 5s;
+  filter: url(#filter);
+}
+.category-webzin-section ul li .textbox::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.category-webzin-section ul li .textbox h3 {
+  font-weight: 500;
+  font-size: 1.1em;
+}
+.category-webzin-section ul li .textbox p {
+  margin: 70px 0;
+}
+.category-webzin-section ul li .textbox a {
+  padding: 7px 15px;
+  float: right;
+  border: 2px solid var(--dark);
+  color: var(--dark);
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: all 0.3s;
+}
+.category-webzin-section ul li .textbox a:hover {
+  border: 2px solid var(--orange);
+  color: var(--dark);
+}
+@media screen and (min-width:1000px) {
+  .category-webzin-section ul li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+  }
+  .category-webzin-section ul li .meta {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .category-webzin-section ul li figure {
+    width: 40%;
+    margin-right: 30px;
+  }
+  .category-webzin-section ul li .textbox {
+    flex: 1;
+  }
+}
+@media screen and (min-width:600px) and (max-width:1000px) {
+  .category-webzin-section ul li {
+    width: 50%;
+  }
+}
+@media screen and (max-width:600px) {
+  .category-webzin-section ul li {
+    width: 100%;
+  }
+}
+@media screen and (max-width:1000px) {
+  .category-webzin-section ul li .textbox {
+    color: var(--dark);
+    padding: 10px;
+  }
+}/*# sourceMappingURL=category.css.map */

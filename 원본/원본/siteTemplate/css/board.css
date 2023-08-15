@@ -1,0 +1,116 @@
+.board{
+  width: 100%;
+  border-top: 4px double var(--main-color) /* 3픽셀 이상부터 두줄 적용됨 */
+}
+
+.board tr{
+  border-bottom: 1px solid #ccc;
+}
+
+.board th,
+.board td{
+  padding: 7px;
+  text-align: center;
+  white-space: nowrap; /* 줄내림이 안되는거 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 글 생략! 생략하려면 white-space: nowrap이 꼭 되어있어여해*/
+}
+
+.board th{
+  background: var(--main-color);
+  color: #FFF;
+
+}
+
+.board tbody tr:nth-child(even){
+background: #EEE;
+}
+  
+.board tr > *:nth-child(1),
+.board tr > *:nth-child(5){
+  width: 50px
+}
+
+.board tr > *:nth-child(3),
+.board tr > *:nth-child(4){
+  width: 120px;
+}
+
+
+.board td a{
+  /* 
+  앵커가 생략글을 만들려면 무조건 블록레벨이어야해 
+  */
+  display: block;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+.board td a:hover{
+  color: var(--point-color);
+}
+
+
+.board_paging{
+  text-align: center;
+  margin: 30px 0;
+
+}
+
+.board_paging a{
+  margin: 0 3px;
+  font-weight: 600;
+}
+
+
+/* 액티브가 추가되면 호버가 되더라도 색이 바뀌게 ? 액티브를 호버 뒤에 써주는게 좋다*/
+.board_paging a:hover{
+  color: var(--main-color)
+}
+
+.board_paging a.active{
+  color: var(--point-color);
+}
+
+
+.board_search{
+  padding: 10px 0;
+  text-align: center;
+  border-top: 1px solid #CCC;
+
+}
+
+.board_search *{
+  padding: 4px;
+  height: 30px;
+  vertical-align: middle;
+
+}
+
+.board_search button{
+  width: 50px;
+  background:var(--dark-color);
+  color: #CCC;
+  transition: all 0.2s;
+}
+
+.board_search button:hover{
+  background: var(--point-color);
+}
+
+
+
+
+@media screen and (max-width:800px) {
+  .board tr > *:nth-child(1),
+  .board tr > *:nth-child(4),
+  .board tr > *:nth-child(5){
+    display: none;
+
+  }
+
+}

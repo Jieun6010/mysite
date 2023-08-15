@@ -1,0 +1,215 @@
+@use "./mixin" as m;
+
+body {
+  padding-top: var(--header-height);
+} //body
+header {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  height: var(--header-height);
+  transition: background 1s;
+  &.active {
+    position: fixed;
+    top: -35px;
+    background: rgba(#fff, 0.8);
+  } // active
+  .top {
+    width: 100%;
+    height: 35px;
+    background: var(--blue);
+    ul {
+      display: flex;
+      justify-content: right;
+      width: min(95%, 1200px);
+      margin: 0 auto;
+      height: inherit;
+      li {
+        height: inherit;
+        a {
+          display: block;
+          height: inherit;
+          padding: 0 15px;
+          line-height: 35px;
+          color: #FFF;
+          transform: all 1s;
+          font-size: 0.9em;
+          &:hover{
+            background: var(--orange);
+          }
+        }
+      } 
+    }
+  } 
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(90%, 1200px);
+    height: calc(100% - 35px);
+    margin: 0 auto;
+   
+    h1 {
+      height: 70%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.gnb {
+  #menu-item-157 {
+    display: none;
+  }
+}
+
+.gnb-lg {
+  > div > ul {
+    display: flex;
+    > li {
+      position: relative;
+      height: 45px;
+      &:hover {
+        > a {
+          color: var(--blue);
+        }
+      }
+      > a {
+        display: block;
+        padding: 0 45px;
+        height: 45px;
+        line-height: 45px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #222;
+        transition: color 0.3s;
+      }
+      > ul {
+        display: none;
+        position: absolute;
+        min-width: 100%;
+        @include m.posLT(absolute, 50%, 100%, -50%, 0);
+        > li {
+          > a {
+            display: block;
+            padding: 5px 10px;
+            text-align: center;
+            color: #fff;
+            background: rgb(86, 171, 228);
+            transition: background 1.5s;
+            &:hover {
+              background: #99cffcb7;
+            }
+          } 
+        }
+      }
+    }
+  }
+  @media #{m.$maxLg} {
+    display: none;
+  }
+}
+.gnb-sm {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  #particles-js-star {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  h6 {
+    @include m.posLT(absolute, 50%, 20%, -50%, 0);
+    width: min(90%, 300px);
+    text-align: center;
+    color: cornsilk;
+    font-weight: 100;
+    font-size: min(10vw, 4em);
+    text-transform: uppercase;
+  }
+  video {
+    @include m.objectFit(cover);
+  }
+  > div {
+    @include m.posLT(absolute, 50%, 50%, -50%, -50%);
+    width: min(90%, 300px);
+    background: #c4e3f8c9;
+    border-radius: 5%;
+    padding: 20px;
+    box-sizing: border-box;
+    > ul {
+      > li {
+        > a {
+          &::after {
+            float: right;
+          }
+          &.active {
+            &::after {
+              content: "\f07c";
+            }
+          }
+          @include m.icon(after, "\e185");
+          display: block;
+          padding: 10px 0;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: var(--blue);
+          border-bottom: 1px solid var(--blue);
+        }
+        > ul {
+          display: none;
+          > li {
+            > a {
+              display: block;
+              padding: 7px 10px;
+              color: #666d72c9;
+              font-weight: 600;
+              border-bottom: 2px solid #ffffff2a;
+              transition: color 1s;
+              &:hover {
+                color: #ffffff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media #{m.$minLg} {
+    display: none !important;
+  }
+}
+
+.mbtn {
+  width: 45px;
+  height: 45px;
+  font-size: 1.5em;
+  transition: all 0.3s;
+
+  &.mbtn-open {
+    color: var(--blue);
+  }
+  &.mbtn-close {
+    position: absolute;
+    font-size: 2em;
+    right: 5%;
+    top: 45px;
+    color: var(--blue);
+  }
+  &:hover {
+    color: #99cffcb7;
+    font-size: 1.3em;
+  }
+  @media #{m.$minLg} {
+    display: none;
+  }
+}

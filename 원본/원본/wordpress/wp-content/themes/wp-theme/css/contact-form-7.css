@@ -1,0 +1,57 @@
+div.wpcf7 .screen-reader-response {
+  display: none;
+}
+div.wpcf7 form.wpcf7-form > div {
+  padding: 10px 0;
+  border-bottom: 1px solid #EEE;
+}
+div.wpcf7 form.wpcf7-form > div:last-child {
+  border-bottom: none;
+}
+div.wpcf7 form.wpcf7-form > div:last-child:nth-last-child(2) {
+  border-bottom: none;
+}
+div.wpcf7 form.wpcf7-form > div > p br {
+  display: none;
+}
+div.wpcf7 form.wpcf7-form > div > p label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 20px;
+  background: var(--dark);
+  font-size: 0.9em;
+  color: #FFF;
+  border-radius: 5px;
+}
+div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap {
+  display: block;
+}
+div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap input:not([type=radio], [type=checkbox]), div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap textarea, div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap select {
+  padding: 7px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap input:not([type=radio], [type=checkbox]):focus, div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap textarea:focus, div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap select:focus {
+  outline: none;
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: #FFF;
+}
+div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap input:not([type=radio], [type=checkbox]):focus::placeholder, div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap textarea:focus::placeholder, div.wpcf7 form.wpcf7-form > div > p span.wpcf7-form-control-wrap select:focus::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+div.wpcf7 form.wpcf7-form > div > p input[type=submit] {
+  display: block;
+  margin: 0 auto;
+  display: block;
+  padding: 10px 40px;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  background: #FFF;
+  transition: all 0.3s;
+}
+div.wpcf7 form.wpcf7-form > div > p input[type=submit]:hover {
+  background: var(--blue);
+  color: #FFF;
+}/*# sourceMappingURL=contact-form-7.css.map */

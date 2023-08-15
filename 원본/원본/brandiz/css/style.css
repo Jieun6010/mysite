@@ -1,0 +1,115 @@
+body {
+  color: #666;
+  font-family: 'Montserrat','Noto Sans KR', sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* html이랑 같은말 ! 다 적용된다는  */
+:root{
+  --main-color: #1cbdb4;
+  --sub-color: #a8e9e5;
+  --dark-color: #333;  
+}
+
+main{
+  position: relative;
+  z-index: 1;
+}
+
+
+@media screen and (min-width:1000px) {
+  :root{
+    --header-height: 70px;
+  } 
+}
+
+
+
+/*  */
+@media screen and (max-width:1000px) {
+  :root{
+    --header-height: 60px;
+  } 
+}
+
+/* @keyframes stroke */
+@keyframes stroke {
+    0%{
+      stroke-dashoffset: -1;
+    }
+    30%{
+      stroke-dashoffset: 0;
+    }
+    70%{
+      stroke-dashoffset: 0;
+    }
+    100%{
+      stroke-dashoffset: 1;
+    }
+}
+
+@keyframes updown{
+  0%{
+    margin-top: 0;
+  }
+  100%{
+    margin-top: -20px;
+  }
+}
+
+@keyframes glitch{
+  0%{transform: translateX(-3%);}
+  1%{transform: translateX(2%);}
+  2%{transform: translateX(-1%);}
+  3%{transform: translateX(2%);}
+  4%{transform: translateX(-2%);}
+  5%{transform: translateX(0%);}
+  6%{transform: translateX(2%);}
+  7%{transform: translateX(-1%);}
+  8%{transform: translateX(2%);}
+  9%{transform: translateX(-2%);}
+  10%{transform: translateX(0%); opacity: 0;}
+  11%{transform: translateX(-1%); opacity: 0;}
+  12%{transform: translateX(-3%); opacity: 0;}
+  13%{transform: translateX(2%); opacity: 0;}
+  14%{transform: translateX(-1%); opacity: 0;}
+  15%{transform: translateX(0%); opacity: 0;}
+  100%{transform: translateX(100%); opacity: 0;}
+}
+
+
+@keyframes bubble{
+  0%{
+    top: 110%;
+  }
+  100%{
+    top: -10%;
+  }
+}
+
+@keyframes glow {
+  0%{filter: drop-shadow(0 0 0 #FFF);}
+  100%{filter: drop-shadow(0 0 20px #FFF)}
+}
+
+.title{
+  position: relative;
+  width: min(95%, 1000px);
+  margin: 0 auto;
+  margin-bottom: 30px; 
+  text-align: center;
+  text-transform: uppercase;
+  font-size: min(10vw,5em);
+  color: #FFF;
+}
+.title::before{
+  position: absolute;
+  content: attr(data-content);
+  height: 50%;
+  overflow: hidden;
+  color: var(--main-color);
+  /*가상 엘리먼트의 컨텐트 속성에서만 사용이 가능하다. */
+}

@@ -1,0 +1,70 @@
+$sec:1s;
+.flip-book {
+  perspective: 3000px;
+  div.sheet {
+    position: absolute;
+
+    transform-style: preserve-3d;
+    transition: right $sec, bottom $sec, transform $sec;
+    @media screen and (orientation: landscape) {
+      width: 50%;
+      height: 100%;
+      right:25%;
+      top:0;
+      transform-origin: left center;
+      transform: rotateY(0);  
+      &.active{
+        transform: rotateY(-180deg);
+      }
+    } 
+    @media screen and (orientation: portrait) {
+      width: 100%;
+      height: 50%;
+      bottom: 25%;
+      transform-origin: center top;
+      transform: rotateX(0);   
+      &.active{
+        transform: rotateX(180deg);
+      }
+    } 
+    .page{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      @media screen and (orientation: landscape) {
+        background-image: linear-gradient(90deg,#EEE,#FFF,#EEE);
+        &.page-even{
+          transform: rotateY(180deg);
+        }
+      } 
+      @media screen and (orientation: portrait) {
+        background-image: linear-gradient(0deg,#EEE,#FFF,#EEE);
+        &.page-even{
+          transform: rotateX(180deg);
+        }
+      } 
+    }
+  } 
+  
+  &.active{
+    div.sheet{
+      @media screen and (orientation: landscape) {
+        right:0%;
+      }
+      @media screen and (orientation: portrait) {
+        bottom: 0%;
+      } 
+    }
+  }
+  &.deactive{
+    div.sheet{
+      @media screen and (orientation: landscape) {
+        right: -25%;
+      } 
+      @media screen and (orientation: portrait) {
+        bottom: -25%;
+      } 
+    }
+  }
+} 

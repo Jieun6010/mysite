@@ -1,0 +1,26 @@
+.shortcut {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 0;
+  background-size: cover;
+}
+.shortcut .center {
+  position: relative;
+  width: min(95%, 500px);
+  margin: 0 auto;
+}
+.shortcut .center p img {
+  width: 100%;
+}
+.shortcut .center a img {
+  margin: 0 auto;
+}
+.shortcut .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: url(../img/shortcut/shortcut1_bg.jpg);
+  filter: url(#ripple);
+  transform: scale(1.1);
+}/*# sourceMappingURL=shortcut.css.map */

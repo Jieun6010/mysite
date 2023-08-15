@@ -1,0 +1,69 @@
+@charset "UTF-8";
+.modal {
+  display: none;
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 11;
+}
+.modal img {
+  display: none;
+  max-width: 90%; /* 원래 이미지보다 90% 까지만 커져라 */
+  margin: 10vw auto;
+}
+.modal .close {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  color: #FFF;
+  font-size: 2em;
+}
+.modal .close:hover {
+  color: var(--main-color);
+}
+.modal .loader {
+  position: relative;
+  width: 40px;
+  height: 60px;
+  animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.modal .loader:before,
+.modal .loader:after {
+  content: "";
+  background: #ff3d00;
+  width: 40px;
+  height: 60px;
+  border-radius: 50px 50px 0 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(45deg);
+  transform-origin: 50% 68%;
+  box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.2666666667) inset;
+}
+.modal .loader:after {
+  transform: rotate(-45deg);
+}
+@keyframes heartBeat {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}/*# sourceMappingURL=modal.css.map */

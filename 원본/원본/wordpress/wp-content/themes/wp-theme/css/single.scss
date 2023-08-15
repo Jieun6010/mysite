@@ -1,0 +1,63 @@
+@use './mixin' as m;
+
+.single-section{
+  max-width: 1000px;
+  margin: 0 auto;
+  dl.meta{ 
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #CCC;
+    margin-bottom: 40px;
+    dt,dd{
+      box-sizing: border-box;
+      padding: 10px;
+      border-bottom: 1px solid #CCC;
+    }
+    dt{
+      width: 25%;
+      text-align: center;
+      color: #FFF;
+      background: var(--dark);
+    }
+    dd{
+      width: 75%;
+    }
+  }
+  article{
+    img{
+      max-width: 100%;
+      margin: 30px auto;
+      padding: 10px;
+      background: #EEE;
+      border: 1px solid #CCC;
+      box-shadow: 10px 10px 0 var(--dark);
+    }
+    p{
+      max-width: 800px;
+      margin: 20px 0;
+      line-height: 1.6em;
+    }
+  }// article
+
+  .post-nav{
+    margin-top: 40px;
+    padding: 10px;
+    border-top: 1px solid #CCC;
+    text-align: center;
+    a{
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      transition: all 0.3s;
+      text-align: center;
+      line-height: 30px;
+      &:hover{
+        background: var(--dark);
+        color: #FFF;
+      }
+    }
+  }
+} // single-section

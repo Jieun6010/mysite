@@ -1,0 +1,55 @@
+@use "mixin" as m;
+
+.page-section-greet {
+  overflow: hidden;
+  figure{
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 30px auto;
+    border: 10px solid #EEE;
+    img{
+      width: 100%;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin: 30px auto;
+    &:nth-of-type(1){
+      max-width:600px ;
+    }
+    &:nth-of-type(2){
+      max-width: 400px;
+    }
+    &:nth-of-type(3){
+      max-width: 600px;
+    }
+    &:nth-of-type(4){
+      max-width: 800px;
+    }
+    &:nth-of-type(5){
+      max-width: 300px;
+    }
+  } // p
+
+
+  /* motion */
+  p{
+    opacity: 0;
+    transition: all 1s;
+    &:nth-of-type(odd){
+      transform: translateX(-100px);
+    }
+    &:nth-of-type(even){
+      transform: translateX(100px);
+    }
+  }
+  p.active{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  figure{
+    perspective: 1000px;
+    background: var(--dark);
+  }
+} // section

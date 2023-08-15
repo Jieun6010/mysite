@@ -1,0 +1,88 @@
+// mixin = 변수나 함수를 만드는 것
+
+//media query 변수만들기
+$minLg: "screen and (min-width:1000px)";
+$maxLg: "screen and (max-width:1000px)";
+$md: "screen and (min-width:600px) and (max-width:1000px)";
+$minSm: "screen and (min-width:600px)";
+$maxSm: "screen and (max-width:600px)";
+$landcape : 'screen and (orientation:landscape)'; // min
+$portrait : 'screen and (orientation:portrait)'; //max
+
+// mixin object fit 함수 만들기
+@mixin objectFit($c) {
+  width: 100%;
+  height: 100%;
+  object-fit: $c;
+  object-position: center;
+}
+
+// position left / top 함수 만들기
+@mixin posLT($pos, $l, $t, $tx, $ty) {
+  position: $pos;
+  left: $l;
+  top: $t;
+  transform: translate($tx, $ty);
+}
+
+//position left / bottom
+@mixin posLB($pos, $l, $b, $tx, $ty) {
+  position: $pos;
+  left: $l;
+  bottom: $b;
+  transform: translate($tx, $ty);
+}
+
+// position right / top 함수
+@mixin posRT($pos, $r, $t, $tx, $ty) {
+  position: $pos;
+  right: $r;
+  top: $t;
+  transform: translate($tx, $ty);
+}
+
+// position right / top 함수
+@mixin posRB($pos, $r, $b, $tx, $ty) {
+  position: $pos;
+  right: $r;
+  bottom: $b;
+  transform: translate($tx, $ty);
+}
+
+// mixin clearfix // 이거 면접때 꼭 물어보니까 무조건 닥 암기!
+
+@mixin clearfix {
+  // 클리어픽스는 부모한테 적용되는거!
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// mixin square
+@mixin square {
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+// mixin icon
+@mixin icon($psuedo, $code) {
+  &::#{$psuedo} {
+    content: $code;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+}
+
+// color 변수
+$maincolor: #1cbdb4;
+$darkcolor: #333;

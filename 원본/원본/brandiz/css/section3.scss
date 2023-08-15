@@ -1,0 +1,35 @@
+@use "mixin" as m;
+
+.section3 {
+  position: relative;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  .bg {
+    height: 100%;
+    background-image: url(../img/section3/seciton3_bg.jpg);
+    background-position: center;
+    // background-size: cover;
+  }
+  .gooey {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    filter: url(#goo);
+
+    div {
+      position: absolute;
+      @include m.square;
+      border-radius: 50%;
+      background: radial-gradient(at 20% 20%, #FFF, rgb(211, 161, 211));
+      animation-name: bubble;
+      animation-iteration-count: infinite; // 감소횟수 무한반복
+      animation-timing-function: linear; 
+    } // div
+  } // gooey
+  .section3-text{
+    width: min(90%, 900px);
+    @include m.posLT(absolute,50%,50%,-50%,-50%);
+  }
+}

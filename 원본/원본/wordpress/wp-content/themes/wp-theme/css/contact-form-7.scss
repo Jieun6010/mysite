@@ -1,0 +1,63 @@
+@use "mixin" as m;
+
+div.wpcf7 {
+  .screen-reader-response {
+    display: none;
+  } 
+  form.wpcf7-form {
+    > div {
+      padding: 10px 0;
+      border-bottom: 1px solid #EEE;
+      &:last-child{
+        border-bottom: none;
+        &:nth-last-child(2){border-bottom: none;}
+      }
+      > p {
+        br {
+          display: none;
+        } 
+        label {
+          display: inline-block;
+          margin-bottom: 10px;
+          padding: 5px 20px;
+          background: var(--dark);
+          font-size: 0.9em;
+          color: #FFF;
+          border-radius: 5px;
+        }
+        span.wpcf7-form-control-wrap {
+          display: block;
+          input:not([type=radio],[type=checkbox]), textarea, select { 
+            padding: 7px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s;
+            &:focus{
+              outline: none;
+              border:  1px solid var(--blue);
+              background: var(--blue);
+              color: #FFF;
+              &::placeholder{
+                color: rgba(#FFF,0.7);
+              }
+            } 
+          }
+        }
+        input[type=submit]{ 
+          display: block;
+          margin: 0 auto;
+          display: block;
+          padding: 10px 40px;
+          border: 1px solid var(--blue);
+          color: var(--blue);
+          background: #FFF;
+          transition: all 0.3s;
+          &:hover{
+            background: var(--blue);
+            color: #FFF;
+          }
+        } 
+      } 
+    }
+  }
+} 

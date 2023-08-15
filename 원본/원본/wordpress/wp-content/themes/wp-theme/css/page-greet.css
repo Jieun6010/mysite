@@ -1,0 +1,50 @@
+.page-section-greet {
+  overflow: hidden;
+  /* motion */
+}
+.page-section-greet figure {
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 30px auto;
+  border: 10px solid #EEE;
+}
+.page-section-greet figure img {
+  width: 100%;
+}
+.page-section-greet p {
+  text-align: center;
+  margin: 30px auto;
+}
+.page-section-greet p:nth-of-type(1) {
+  max-width: 600px;
+}
+.page-section-greet p:nth-of-type(2) {
+  max-width: 400px;
+}
+.page-section-greet p:nth-of-type(3) {
+  max-width: 600px;
+}
+.page-section-greet p:nth-of-type(4) {
+  max-width: 800px;
+}
+.page-section-greet p:nth-of-type(5) {
+  max-width: 300px;
+}
+.page-section-greet p {
+  opacity: 0;
+  transition: all 1s;
+}
+.page-section-greet p:nth-of-type(odd) {
+  transform: translateX(-100px);
+}
+.page-section-greet p:nth-of-type(even) {
+  transform: translateX(100px);
+}
+.page-section-greet p.active {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.page-section-greet figure {
+  perspective: 1000px;
+  background: var(--dark);
+}/*# sourceMappingURL=page-greet.css.map */

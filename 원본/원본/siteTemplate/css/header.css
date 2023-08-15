@@ -1,0 +1,317 @@
+/* 디자인의 규칙은 통일성 ! 그래야 예뻐*/
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid#EEE;
+    /* 연한 회색 구분선 */
+    z-index: 10;
+    /* 헤드에서는 항상 먼저 생각해야될게 뭐냐면 밑에 애들한테 포지션을 하나 주면 
+    헤더를 덮어버리니까 z-index 를 헤더를 항상 제일 높게 10정도 줘눠야해 안전하게 시작 */
+    
+}
+
+header.active{
+    position: fixed;
+    top : -35px;
+}
+
+header .top {
+    height: 35px;
+    background: var(--dark-color);
+}
+
+header .top .member { 
+    width: 95%;
+    max-width: 1200px;
+    height: inherit;
+    margin: 0 auto;
+    text-align: right;
+}
+
+header .top .member a {
+    line-height: 35px;
+    margin-left: 7px;
+    color: #AAA;
+    font-size: 0.9em;
+    /* em은 스타일 css에서 부모를 15px로 지정을했으니까 
+    부모 크기에 90%라고 생각하면 됨 ! 배율이라고 생각하면 됨
+    픽셀로 안하는 이유는 em을 쓰는 이유는 ! 전체적으로 글자를 바꾸고싶은데 비율로바꾸면
+    다 똑같이 바뀌어서 ! 전체적으로 줄때는 한번만 픽셀로 주고 그 다음부터는 비율로 쓰는게 좋다.
+    부모가 커지면 자식도 같이 커지구 */
+}
+
+header .top .member a:hover {
+    color: #DDD
+}/* 호버는 예의상 항상 만들어주야한다. */
+
+/* -----------------------------------------------------------------------------------*/
+
+header .center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1200px;
+    height: calc(100% - 35px);
+}
+
+/* 페이지에 h1은 하나밖에 없으니까 그냥 단독으로 써도 됨 !
+넓이 줄 생각 하면 안됨 !  */
+h1 {
+    height: 70%;
+}
+
+h1 img {
+    height: 100%;
+}
+
+
+/* 반응형 ---------------------------------------------------------------------------------------- */
+/* 최소 1000 이상 라지사이즈 */
+@media screen and (min-width:1000px) {
+    header {
+        height: 130px;
+
+    }
+
+    body {
+        padding-top: 130px;
+    }
+
+    .mbtn,
+    .gnb.sm {/* 라지사이즈에서는 필요없으니까 */
+        display: none !important;
+    }
+    /* 스크립트는 인라인으로 한번 디스플레이 블럭을 만들어버리기때문에 우선순위에서 진다
+    인라인을 이겨먹어야하는 css이기때문에 important를 꼭 해줘야한다. */
+}
+
+/* 스몰사이즈 */
+@media screen and (max-width:1000px) {
+    header {
+        height: 100px;
+    }
+
+    body {
+        padding-top: 100px;
+    }
+
+    .gnb.lg {
+        display: none;
+    }
+}
+/* ---------------------------------------------------------------------------------------------- */
+
+/* .mbtn ------------------------------------------------------*/
+.mbtn {
+    position: relative;
+    /* z-index를 갖기위해서 */
+    width: 45px;
+    height: 45px;
+    background: var(--dark-color);
+    border-radius: 5px;
+}
+
+
+/* 폰트어썸 아이콘 */
+.mbtn i { 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #FFF;
+    font-size: 1.3em;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+}
+
+.mbtn .close{
+    opacity: 0;
+}
+
+.mbtn.active .open{
+    opacity: 0;
+}
+
+.mbtn.active .close{
+    opacity: 1;
+}
+
+/* nav .gnb.sm 디자인 --------------------------------------- */
+.gnb.sm {
+    position: fixed;
+    /* 고정이 되어야하니까 */
+    width: 100%;
+    /* 화면 전체의 크기가 되어야하기 때문에 */
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .7);
+    /* 검은색이란 뜻이야 a가 붙으면 알파라고 투명도라는 뜻임! */
+    /* opacity를 줘버리면 메뉴까지 전체 다 투명해지니까 안됨 ! 메뉴는 놔두고 백그라운드만 투명하게해야해*/
+}
+
+/* 꼭 sm버튼 안에 있는 ul이라고 해줘야해 */
+.gnb.sm>ul {
+    position: absolute;
+    /* 앱솔을 줘서 내가 원하는 위치로 날려보내주자 */
+    width: 250px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    overflow: auto; /* 넘치면 알아서 스크롤바를 만들어 ! 꼭 해줘야함 */
+    padding-top: 110px;
+    box-sizing: border-box;
+    background: #FFF;
+    /* motion때문에 하는것*/
+    transform: translateX(100%);
+    /*모션이 적용되면 모양이 다 틀어져버리기때문에 주석처리해놓고 */
+    transition: all 0.3s;
+}
+
+.gnb.sm.active>ul{
+    transform: translateX(0);
+}
+
+.gnb.sm>ul>li>a {
+    /* 1덱스 앵커 */
+    display: block;
+    padding: 10px 15px;
+    /* 위아래 , 좌우 */
+    font-size: 1.15em;
+    font-weight: 500;
+    border-bottom: 1px solid #CCC;
+    transition: all 0.3s;
+}
+
+.gnb.sm>ul>li>a::after {
+    content: "\f078";
+    /* 아이콘을 출력하는 번호 / 얘만 바꾸면 다 바뀌게된다. */
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    float: right;
+    margin-top: 3px;
+    transition: all 0.3s;
+}
+
+.gnb.sm>ul>li>a.active{
+    color: var(--point-color);
+}
+
+.gnb.sm>ul>li>a.active::after{ /* 불이 켜진 아이의 화살표를 반대로 뒤집기 */
+    transform: rotate(180deg); /* 180도 뒤집힌거처럼 보이게 만들기 */
+}
+
+.gnb.sm>ul>li>ul>li>a { /* 인사말 / 사업소개 온라인문의 부분 */
+    display: block;
+    padding: 10px 25px;
+    border-bottom: 1px solid var(--sub-color);
+    color: #FFF;
+    background: var(--main-color);
+    transition: all 0.3s;
+}
+
+.gnb.sm>ul>li>ul>li>a:hover {
+    background: var(--sub-color);
+}
+
+.gnb.sm>ul>li>ul{ 
+    /* 이걸 먼저 해버리면 사라져버리기때문에 작업해도 눈에 안보이니까 꼭 마지막에 해줘야한다. */
+    display: none;
+}
+
+.gnb.sm{
+    display: none;
+}
+
+/* gnb.lg 시작 --------------------------------------------------------- */
+.gnb.lg{
+    height: 45px;
+}
+
+.gnb.lg>ul{ /* 모든 메뉴들을 옆쪽으로 세울거야 */
+    display: flex;
+    height: 100%;  
+}
+
+.gnb.lg>ul>li{
+    position: relative;
+    height: 100%;/* 45px이라는 말이야 */ 
+}
+
+.gnb.lg>ul>li>a{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    padding: 0 40px;
+    line-height: 45px;
+    font-size: 1.15em;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.gnb.lg>ul>li>a>span{
+    display: block;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.gnb.lg>ul>li>a>span.en{
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.gnb.lg>ul>li:hover>a{
+    color: var(--point-color);
+}
+
+.gnb.lg>ul>li:hover>a>span{
+    margin-top: -45px;
+}
+
+.gnb.lg>ul>li>ul>li>a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    white-space: nowrap; /* 줄내림이 안되게 */
+    color: #FFF;
+    background: var(--main-color);
+    transition: all 0.3s;   
+}
+
+.gnb.lg>ul>li>ul>li>a:hover{
+    background: var(--sub-color);
+}
+
+.gnb.lg>ul>li>ul{ /* 1덱스 ul */
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width:100% /* 100% 이상 */ 
+
+}
+
+.gnb h6,
+.gnb>ul>li.member,
+.gnb>ul>li.SNS
+{
+    display: none;
+}
+
+.gnb.sm .en{
+    display: none;
+}

@@ -1,0 +1,26 @@
+
+jquery cdn-----------------------------------------------------------------------------------
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+
+fontawesome kit
+<script src="https://kit.fontawesome.com/a45f44bad8.js" crossorigin="anonymous"></script>
+
+
+나눔고딕-----------------------------------------------------------------------------
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+폰트 패밀리 : font-family: 'Nanum Gothic', sans-serif;
+
+노토산스----------------------------------------------------------------------------------
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+font-family: 'Noto Sans KR', sans-serif;
+
+나눔명조-------------------------------------------------------------------------------------
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+font-family: 'Montserrat', sans-serif;
+
+<영어폰트>
+몬세라토-------------------------------------------------------------------------------------------
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+font-family: 'Montserrat', sans-serif;
+
+장식있는체(꺾이는거)

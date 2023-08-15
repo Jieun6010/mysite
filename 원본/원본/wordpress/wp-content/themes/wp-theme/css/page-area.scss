@@ -1,0 +1,61 @@
+@use "mixin" as m;
+
+.page-section-area {
+  p {
+    margin: 30px auto;
+    text-align: center;
+  }
+  div {
+    figure {
+      margin: 0 auto;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .page-section-area {
+    figure {
+      max-width: 850px;
+      .md {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .page-section-area {
+    figure {
+      max-width: 200px;
+      .lg {
+        display: none;
+      }
+    }
+  }
+}
+
+.page-section-area {
+  p {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s;
+  } // p
+  p.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  div {
+    figure {
+      opacity: 0;
+      transition: all 1s;
+    } //figure
+    &.active {
+      figure {
+        opacity: 1;
+      }
+    }
+  }
+}

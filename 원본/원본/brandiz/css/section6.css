@@ -1,0 +1,79 @@
+@charset "UTF-8";
+.section6 .bg {
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+}
+.section6 .bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.section6 .contact {
+  position: relative;
+  margin-top: calc(-100vh + var(--header-height));
+}
+.section6 .contact figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--header-height));
+}
+.section6 .contact figure div {
+  position: relative;
+  width: min(90%, 650px);
+}
+.section6 .contact figure div img {
+  width: 100%;
+}
+.section6 .contact figure div .car {
+  position: absolute;
+  top: 0;
+}
+.section6 .contact form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height));
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15vw;
+}
+.section6 .contact form fieldset {
+  width: min(95%, 1000px);
+}
+.section6 .contact form fieldset p {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #FFF;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 0 #000;
+}
+.section6 .contact form fieldset input,
+.section6 .contact form fieldset textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.section6 .contact form fieldset input::placeholder,
+.section6 .contact form fieldset textarea::placeholder {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: #DDD;
+}
+.section6 .contact form fieldset textarea {
+  height: 200px;
+  resize: vertical; /* 수직 */
+}
+.section6 .contact form fieldset button {
+  padding: 20px 50px;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  background: #FFF;
+}
+.section6 .contact form fieldset button:hover {
+  background: var(--main-color);
+  color: #FFF;
+}/*# sourceMappingURL=section6.css.map */

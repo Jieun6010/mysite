@@ -1,0 +1,205 @@
+.sub-visual {
+  position: relative;
+  height: max(30vh, 200px);
+  background: #ccc;
+  /* motion */
+}
+.sub-visual .breadcrumb {
+  position: absolute;
+  z-index: 2;
+  right: 3%;
+  top: 3%;
+  font-size: 0.85em;
+  color: #FFF;
+  text-transform: uppercase;
+}
+.sub-visual .breadcrumb > * {
+  margin: 0 3px;
+}
+@media screen and (max-width:600px) {
+  .sub-visual .breadcrumb {
+    display: none;
+  }
+}
+.sub-visual #particles-js {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.sub-visual figure {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.sub-visual figure img {
+  filter: brightness(0.8);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.sub-visual figure figcaption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 400px);
+  box-sizing: border-box;
+  padding-left: 15px;
+  border-left: 3px solid var(--blue);
+  color: #fff;
+}
+.sub-visual figure figcaption h6 {
+  display: inline-block;
+  background: var(--blue);
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 10px;
+  border-radius: 0 30px 0 30px;
+}
+.sub-visual figure {
+  display: none;
+}
+.sub-visual figure img {
+  transform: scale(1.2);
+}
+.sub-visual figure figcaption h6,
+.sub-visual figure figcaption p {
+  position: relative;
+}
+
+figure.active {
+  display: none;
+}
+figure.active img {
+  transform: scale(1);
+  transition: transform 20s;
+  transition-timing-function: linear;
+}
+.snb {
+  height: 50px;
+  background: var(--dark);
+  background-image: url(../img/sub/patten.png);
+  background-size: 7px;
+}
+.snb > div {
+  width: min(95%, 1200px);
+  margin: 0 auto;
+  height: inherit;
+}
+.snb > div > ul {
+  height: inherit;
+}
+.snb > div > ul > li {
+  display: none;
+  height: inherit;
+}
+.snb > div > ul > li.current-menu-parent {
+  display: block;
+}
+.snb > div > ul > li > a {
+  display: none;
+}
+.snb > div > ul > li > ul {
+  display: flex;
+  justify-content: center;
+  height: inherit;
+}
+.snb > div > ul > li > ul > li {
+  flex: 1;
+  max-width: 200px;
+  height: inherit;
+  border-right: 1px solid var(--blue);
+}
+.snb > div > ul > li > ul > li:last-child {
+  border: none;
+}
+.snb > div > ul > li > ul > li.current-post-parent > a {
+  background: #22557e;
+}
+.snb > div > ul > li > ul > li > a {
+  display: block;
+  height: inherit;
+  padding: 0 15px;
+  text-align: center;
+  line-height: 50px;
+  background: var(--blue);
+  color: #FFF;
+  transition: background 2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.snb > div > ul > li > ul > li > a[aria-current] {
+  background: #22557e;
+}
+.snb > div > ul > li > ul > li > a:hover {
+  background: rgba(196, 227, 248, 0.7882352941);
+}
+
+main.sub-content {
+  width: min(95%, 1200px);
+  margin: 30px auto;
+}
+main.sub-content h2.sub-title {
+  position: relative;
+  text-align: center;
+  font-size: min(7vw, 2em);
+  font-weight: 500;
+  color: var(--blue);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #CCC;
+}
+main.sub-content h2.sub-title::first-letter {
+  font-size: 1.2em;
+  color: var(--orange);
+}
+main.sub-content h2.sub-title::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 25px);
+  width: 50px;
+  height: 3px;
+  margin: 0 auto;
+  top: 0;
+  background: var(--green);
+}
+main.sub-content .sub-desc {
+  position: relative;
+  width: min(90%, 500px);
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--dark);
+  font-weight: 600;
+}
+main.sub-content .sub-desc b {
+  font-size: 1.2em;
+  color: var(--blue);
+}
+main.sub-content .sub-desc::after, main.sub-content .sub-desc::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--orange);
+}
+main.sub-content .sub-desc::before {
+  left: 0;
+  top: 0;
+  border-right: none;
+  border-bottom: none;
+}
+main.sub-content .sub-desc::after {
+  right: 0;
+  bottom: 0;
+  border-left: none;
+  border-top: none;
+}/*# sourceMappingURL=sub.css.map */

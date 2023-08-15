@@ -1,0 +1,131 @@
+.float_container::after{ /* ul 클래스명 / clearfix라고 부른다*/
+  content: "";
+  display: block;
+  clear: both;
+}
+.float_container li a figure figcaption{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -1000000px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  background: rgba(0,0,0,.7);
+  color: #FFF;
+}
+.float_container li a figure figcaption h3{
+  margin-bottom: 10px;
+  text-transform:uppercase; 
+  /* 대소문자 바꾸는 코드로 uppercase하면 대문자, lowercase하면 소문자 */
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.float_container li a figure:hover img{
+  filter: blur(3px);
+}
+
+.float_container li a figure img{
+  width: 100%;
+  transition: filter 1s;
+}
+@media screen and (min-width:1200px) {
+  /* .float_container li *{
+    display: none;
+  } */
+  .float_container li{
+    position: relative; /* a값에다가 absolute값 주기위함. */
+  }
+  .float_container li::before{
+    content: "";
+    display: block;/* 가상엘리먼트 만들어줬다. */
+  }
+  .float_container li.box{
+    width: 33.33%;
+  }
+  .float_container li.box::before{
+    padding-top: 100%;
+  }
+  .float_container li.longbox{
+    width: 33.33%;
+  }
+  .float_container li.longbox::before{
+    padding-top: 200%;
+  }
+  .float_container li.widebox{
+    width: 66.66%;
+  }
+  .float_container li.widebox::before{
+    padding-top: 50%;
+  }
+  .float_container li:nth-child(1),
+  .float_container li:nth-child(2),
+  .float_container li:nth-child(3),
+  .float_container li:nth-child(4),
+  .float_container li:nth-child(5){
+    float: right;
+  }
+  .float_container li:nth-child(5) ~ li{
+    float: left;
+  }
+  .float_container li a{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;/* 부모에게 높이를 주지않아서 자식에게 줄수있음 */
+    box-sizing: border-box;
+    padding: 3px;
+    border: 1px solid var(--sub-color);
+  }
+  .float_container li a figure{
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }/* a값에 높이값이 있기때문에 figure값에 줄수있다. */
+
+  .float_container li a figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+} /* lg */
+
+@media screen and (max-width:1200px) {
+  .float_container li a figure{
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .float_container li{
+    box-sizing: border-box;
+    padding: 10px;
+    float: left;
+  }
+  
+  .float_container li a{
+    display: block;
+    padding: 5px;
+    background: #EEE;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  }
+ 
+}/* md ~ sm 2칸짜리 */
+
+
+@media screen and (min-width:500px) and (max-width:1200px){
+  .float_container li{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .float_container li{
+    width: 100%;
+  }
+}

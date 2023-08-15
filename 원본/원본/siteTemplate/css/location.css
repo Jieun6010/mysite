@@ -1,0 +1,44 @@
+.tab_menu{
+  position: relative;
+  display: flex;
+  height: 50px;
+}
+
+.tab_menu button{
+  height: 51px; /* 1px을 더 크게 설정해야한다 이유는 모르겠어 */
+  padding: 0 40px; /* 좌우 패딩을 줘서 여백 확보 */
+  background: #EEE;
+  color: #999;
+  font-weight: 700;
+  margin-left: 15px;
+  border: 1px solid #CCC;
+  border-bottom-color: var(--sub-color);
+}
+
+.tab_menu button.active{
+ color: #FFF; 
+ background: var(--main-color);
+ border: 1px solid var(--sub-color);
+ border-bottom-color: var(--main-color);
+}
+
+.pane{
+  padding: 15px;
+  background: var(--main-color);
+  border: 1px solid var(--sub-color);
+}
+
+.pane img,
+.pane iframe{
+  width: 100%;
+}
+
+.pane iframe{
+  height: 400px;
+}
+
+.pane img{
+  display: none;
+}
+
+

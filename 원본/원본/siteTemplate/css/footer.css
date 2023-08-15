@@ -1,0 +1,135 @@
+footer .sitemap{
+  padding: 30px 0; /*위 아래 , 상 하 */
+  background: var(--dark-color);
+}
+
+footer .sitemap>ul{
+  display: flex;
+  width: 95%;
+  max-width: 1200px; /* 일반적으로 1200으로 함 */ 
+  margin: 0 auto;
+}
+
+footer .sitemap>ul>li{
+  flex: 1;
+}
+
+footer .sitemap>ul>li>a{
+  display: none;
+}
+
+/*
+footer .sitemap h6::before{
+  content: "- ";
+}
+*/
+
+footer .sitemap h6{ /* 글자를 도드라지게 만들거야 */
+  margin-bottom: 10px; /* 글자를 아래로 조금 밀거야 */
+  font-size: 1em;
+  font-weight: 500;
+  color: #AAA;
+}
+
+footer .sitemap>ul>li>ul>li{
+  margin: 3px 0;
+}
+
+footer .sitemap>ul>li>ul>li a{
+  transition: all 0.3s;
+}
+
+/*
+footer .sitemap>ul>li>ul> li a::before{
+  content: ". "
+}
+*/
+
+footer .sitemap>ul>li>ul>li a:hover{
+  color: var(--point-color);
+}
+
+
+footer .sitemap>ul>li.sns>ul>li{
+  display: inline-block;
+  margin-right: 5px;
+}
+
+footer .sitemap>ul>li.sns>ul>li> a{
+  font-size: 1.5em;
+}
+
+footer .sitemap>ul>li.sns>ul>li> a::before{
+  display: none;
+  /* content: ""; 이거보다 
+  예를 들어 다른곳에서 마진을 주는데 콘텐트를 하면 다른 속성들이 다 남아있기때문에 여기서도
+  적용이 된다. 아예 디스플레이 넌을 줘서 없애버리면 적용도 안되고 이게 더 낫다. */
+
+}
+
+/*------------------------------------------------------------------------------*/
+
+@media screen and (max-width:1000px) {
+  footer .sitemap > ul{
+    flex-wrap: wrap; /* 이렇게 해줘야 꼬치를 2개를 꽂을 수 있음*/
+    justify-content: center;
+  }
+  footer .sitemap>ul>li:not(.sns)>ul{
+    display: none;
+  }
+
+    footer .sitemap>ul>li{
+      flex: none; /* 두줄일때는 플렉스 1을 하면 안돼서 */
+      margin: 0 5px;
+    }
+
+    footer .sitemap>ul>li.sns h6{
+      display: none;
+    }
+
+    footer .sitemap>ul>li>h6{
+      font-size: 0.8em;
+      text-align: center;
+    }
+    footer .sitemap>ul>li>h6::before{
+      display: none;
+    }
+
+    footer .sitemap>ul>li.sns{
+      width: 100%;
+      text-align: center;
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+.info{
+  font-size: 0.9em;
+  padding: 20px 0;
+  text-align: center;
+  background: #2f2f2f;
+}
+
+.info address,
+.info p{
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+.info address{
+  color: #888;
+}
+
+.info i{
+  display: inline-block; /* 덩어리로 줄내림을 하기위해 */
+}
+
+.info address i::after{
+  content: " /";
+  margin: 0 5px;
+}
+
+.info p{
+  font-weight: 500;
+  color: #AAA;
+}

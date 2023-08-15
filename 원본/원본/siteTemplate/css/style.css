@@ -1,0 +1,78 @@
+body {
+    color: #666;
+    text-decoration: none;
+    /* 밑줄 없애기 
+    부모가 없앴으니까 자식들도 다 없어져 */
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    /* 사용자 컴터에는 내 컴터에 있는 폰트가 없을수가있으니까
+    구글 웹폰트 들어가서 Early Access 들어가서 즐겨찾기 해놓자 ! 
+    대표적으로 우리나라에서 많이 쓰는건 (장식이 없는) 
+    포인트를 주기위해서는 샨셰리프..?ㅎ..를 쓴다.섞어서 쓰면 돼 ! 
+    대표적인 샨세리프는 : 나눔고딕 / 노토산스 / 영어는 몬테세라토를 대부분 많이 쓴다. */
+    font-size: 15px;
+
+}
+
+.serif {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+/* html 이랑 같은말이야 
+누가 왜 이렇게 했냐고 물어보면 
+가장 상위객체기 때문에 그 안에 있는 애들은 그 변수를 다 쓸 수 있기 때문에 !
+이 값을 스코프로 전체에서 쓸 수 있게 하기 위해서 */
+:root {
+    /* --는 변수랑 같은 말이야 */
+    --main-color: #9b8c7d;
+    --sub-color: #8e7760; 
+    --point-color: #f99d1b;
+    --dark-color: #1f1d1d;
+}
+
+h1 {
+    color: var(--main-color);
+}
+
+.sub_title {
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+.emphasis {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.point {
+    color: var(--point-color);
+    font-weight: 800;
+}
+
+.sub_desc {
+    margin-bottom: 40px;
+}
+
+.sub_desc em {
+    display: block;
+}
+
+.site_guide {
+    position: relative;
+    max-width: 600px;
+    margin-bottom: 28px;
+    padding: 10px;
+    background: #000;
+    color: #FFF;
+}
+
+.site_guide button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

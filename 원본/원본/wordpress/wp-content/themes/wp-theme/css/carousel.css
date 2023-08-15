@@ -1,0 +1,45 @@
+*{margin: 0;padding:0}
+.carousel{
+  perspective: 1000px;/* 원근감 */
+  width:50%; 
+  max-width: 300px;
+  margin: 50px auto;
+}
+li{list-style: none;}
+.polygon3d{
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;/* 자식객체 backface 설정 */
+}
+.polygon3d li{
+  overflow: hidden;
+  position: absolute; 
+  top:0;left:0;
+  
+  padding: 10px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+.polygon3d li:first-child{position: relative;}/* 높이문제 해결 */
+.polygon3d li img{
+  opacity: 0.5;
+  transform: scale(0.8);
+  display: block;
+  width: 100%;
+  transition: all 1s;
+}
+.polygon3d li.active img{
+  opacity: 1;
+  transform: scale(1);
+}
+.indicator{
+  text-align: center;
+}
+.indicator button{
+  text-align: center;
+  padding: 10px;
+}
+.indicator button.active{
+  background: #000;
+  color:#FFF;
+}

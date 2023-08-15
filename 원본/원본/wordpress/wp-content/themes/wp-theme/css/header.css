@@ -1,0 +1,224 @@
+body {
+  padding-top: var(--header-height);
+}
+
+header {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  height: var(--header-height);
+  transition: background 1s;
+}
+header.active {
+  position: fixed;
+  top: -35px;
+  background: rgba(255, 255, 255, 0.8);
+}
+header .top {
+  width: 100%;
+  height: 35px;
+  background: var(--blue);
+}
+header .top ul {
+  display: flex;
+  justify-content: right;
+  width: min(95%, 1200px);
+  margin: 0 auto;
+  height: inherit;
+}
+header .top ul li {
+  height: inherit;
+}
+header .top ul li a {
+  display: block;
+  height: inherit;
+  padding: 0 15px;
+  line-height: 35px;
+  color: #FFF;
+  transform: all 1s;
+  font-size: 0.9em;
+}
+header .top ul li a:hover {
+  background: var(--orange);
+}
+header .center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(90%, 1200px);
+  height: calc(100% - 35px);
+  margin: 0 auto;
+}
+header .center h1 {
+  height: 70%;
+}
+header .center h1 img {
+  height: 100%;
+}
+
+.gnb #menu-item-157 {
+  display: none;
+}
+
+.gnb-lg > div > ul {
+  display: flex;
+}
+.gnb-lg > div > ul > li {
+  position: relative;
+  height: 45px;
+}
+.gnb-lg > div > ul > li:hover > a {
+  color: var(--blue);
+}
+.gnb-lg > div > ul > li > a {
+  display: block;
+  padding: 0 45px;
+  height: 45px;
+  line-height: 45px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s;
+}
+.gnb-lg > div > ul > li > ul {
+  display: none;
+  position: absolute;
+  min-width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+}
+.gnb-lg > div > ul > li > ul > li > a {
+  display: block;
+  padding: 5px 10px;
+  text-align: center;
+  color: #fff;
+  background: rgb(86, 171, 228);
+  transition: background 1.5s;
+}
+.gnb-lg > div > ul > li > ul > li > a:hover {
+  background: rgba(153, 207, 252, 0.7176470588);
+}
+@media screen and (max-width:1000px) {
+  .gnb-lg {
+    display: none;
+  }
+}
+
+.gnb-sm {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.gnb-sm #particles-js-star {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.gnb-sm h6 {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, 0);
+  width: min(90%, 300px);
+  text-align: center;
+  color: cornsilk;
+  font-weight: 100;
+  font-size: min(10vw, 4em);
+  text-transform: uppercase;
+}
+.gnb-sm video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.gnb-sm > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 300px);
+  background: rgba(196, 227, 248, 0.7882352941);
+  border-radius: 5%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.gnb-sm > div > ul > li > a {
+  display: block;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--blue);
+  border-bottom: 1px solid var(--blue);
+}
+.gnb-sm > div > ul > li > a::after {
+  float: right;
+}
+.gnb-sm > div > ul > li > a.active::after {
+  content: "\f07c";
+}
+.gnb-sm > div > ul > li > a::after {
+  content: "\e185";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.gnb-sm > div > ul > li > ul {
+  display: none;
+}
+.gnb-sm > div > ul > li > ul > li > a {
+  display: block;
+  padding: 7px 10px;
+  color: rgba(102, 109, 114, 0.7882352941);
+  font-weight: 600;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1647058824);
+  transition: color 1s;
+}
+.gnb-sm > div > ul > li > ul > li > a:hover {
+  color: #ffffff;
+}
+@media screen and (min-width:1000px) {
+  .gnb-sm {
+    display: none !important;
+  }
+}
+
+.mbtn {
+  width: 45px;
+  height: 45px;
+  font-size: 1.5em;
+  transition: all 0.3s;
+}
+.mbtn.mbtn-open {
+  color: var(--blue);
+}
+.mbtn.mbtn-close {
+  position: absolute;
+  font-size: 2em;
+  right: 5%;
+  top: 45px;
+  color: var(--blue);
+}
+.mbtn:hover {
+  color: rgba(153, 207, 252, 0.7176470588);
+  font-size: 1.3em;
+}
+@media screen and (min-width:1000px) {
+  .mbtn {
+    display: none;
+  }
+}/*# sourceMappingURL=header.css.map */

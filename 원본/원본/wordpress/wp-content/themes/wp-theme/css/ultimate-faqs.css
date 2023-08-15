@@ -1,0 +1,18 @@
+.ewd-ufaq-faq-list .ewd-ufaq-faqs .ewd-ufaq-faq-div .ewd-ufaq-faq-title {
+  border-bottom: 1px dotted #CCC;
+}
+.ewd-ufaq-faq-list .ewd-ufaq-faqs .ewd-ufaq-faq-div .ewd-ufaq-faq-title span {
+  display: block;
+  transform: scale(0.5);
+}
+.ewd-ufaq-faq-list .ewd-ufaq-faqs .ewd-ufaq-faq-div .ewd-ufaq-faq-body {
+  background: var(--dark);
+  color: #FFF;
+}
+.ewd-ufaq-faq-list .ewd-ufaq-faqs .ewd-ufaq-faq-div.ewd-ufaq-post-active .ewd-ufaq-faq-title h4 {
+  color: var(--blue);
+  font-weight: 600;
+}
+.ewd-ufaq-faq-list .ewd-ufaq-faqs .ewd-ufaq-faq-div.ewd-ufaq-post-active .ewd-ufaq-faq-title span {
+  color: var(--blue);
+}/*# sourceMappingURL=ultimate-faqs.css.map */

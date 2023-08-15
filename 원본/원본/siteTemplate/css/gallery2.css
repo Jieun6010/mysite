@@ -1,0 +1,77 @@
+.flex_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex_container li {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.flex_container li a{
+  display: block;
+  padding: 5px;
+  background: pink;
+}
+
+.flex_container li a figure img{
+  width: 100%;
+}
+
+.flex_container li a figure figcaption{
+  padding: 10px;
+  background: var(--dark-color);
+  color: #FFF;
+}
+
+.flex_container li a figure figcaption h3{
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  font-weight: 700;
+  text-transform: capitalize;
+  border-bottom: 1px dotted #FFF;
+}
+
+@media screen and (min-width:1200px) {
+  .flex_container li{
+    width: 33.33%;
+  }
+}/* lg */
+
+@media screen and (min-width:600px) and (max-width:1200px){
+  .flex_container li{
+    width: 50%;
+  }
+}/* md */
+
+@media screen and (max-width:600px) {
+  .flex_container li{
+    width: 100%;
+  }
+}/* sm */
+
+/* hover motion */
+.flex_container li figure{
+  overflow: hidden;
+}
+.flex_container li figure figcaption{
+  position: relative;
+}
+.flex_container li img{
+  filter: grayscale(1);
+  transition: all 0.5s;/* 훅 꺼지는 효과 */
+}
+
+.flex_container li a:hover img{
+  filter: grayscale(0);
+  transform: scale(1.2);
+  transition: filter 0.5s, transform 5s;/* 서서히 커지는 효과 */
+} 
+.flex_container li a figcaption{
+  transition: all 0.5s;/* 마우스 가져대면 0.5초 켜짐 */
+}
+.flex_container li a:hover figcaption{
+  background: var(--sub-color);
+}

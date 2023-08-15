@@ -1,0 +1,71 @@
+.section2 {
+  position: relative;
+  height: calc(100vh - var(--header-height));
+  background-color: var(--main-color);
+  background-image: url(../img/section2/section_22.png);
+  background-size: 10px;
+  overflow: hidden;
+}
+.section2 #particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.section2 .bg {
+  position: relative;
+  height: 100%;
+  left: 55%;
+  animation: glow 2s infinite alternate;
+}
+.section2 .carousel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 800px);
+}
+.section2 .carousel img {
+  width: 100%;
+}
+.section2 .carousel img.dummy {
+  opacity: 0;
+}
+.section2 .carousel img.img {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+.section2 .carousel img.img1 {
+  opacity: 1;
+}
+.section2 .carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFF;
+  border: 3px solid var(--dark-color);
+  opacity: 0.5;
+}
+.section2 .carousel button:hover {
+  opacity: 1;
+}
+.section2 .carousel button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dark-color);
+}
+.section2 .carousel button.prev {
+  left: 20px;
+}
+.section2 .carousel button.next {
+  right: 20px;
+}/*# sourceMappingURL=section2.css.map */

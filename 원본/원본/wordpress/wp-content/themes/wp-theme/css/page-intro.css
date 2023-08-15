@@ -1,0 +1,76 @@
+.page-section-intro {
+  overflow: hidden;
+}
+.page-section-intro > p {
+  margin: 30px auto;
+  max-width: 400px;
+  text-align: center;
+}
+.page-section-intro ul {
+  /* motion --------------------------------------------------------------- */
+}
+.page-section-intro ul li {
+  padding: 30px 0;
+  border-top: 1px dotted #ccc;
+}
+@media screen and (min-width: 800px) {
+  .page-section-intro ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page-section-intro ul li:nth-of-type(odd) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  .page-section-intro ul li figure {
+    width: 60%;
+  }
+  .page-section-intro ul li div {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .page-section-intro ul li div {
+    margin-top: 30px;
+  }
+}
+.page-section-intro ul li figure {
+  overflow: hidden;
+  margin: 0;
+  box-sizing: border-box;
+  border: 10px solid #ccc;
+}
+.page-section-intro ul li figure img {
+  width: 100%;
+}
+.page-section-intro ul li div h3 {
+  display: inline-block;
+  padding: 5px 25px;
+  border-radius: 5px;
+  background: var(--blue);
+  margin-bottom: 15px;
+  color: #FFF;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.page-section-intro ul li:nth-child(odd) figure {
+  transform: translateX(100px);
+}
+.page-section-intro ul li:nth-child(odd) div {
+  transform: translateX(-100px);
+}
+.page-section-intro ul li:nth-child(even) figure {
+  transform: translateX(-100px);
+}
+.page-section-intro ul li:nth-child(even) div {
+  transform: translateX(100px);
+}
+.page-section-intro ul li figure, .page-section-intro ul li div {
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+}
+.page-section-intro ul li.active figure, .page-section-intro ul li.active div {
+  opacity: 1;
+  transform: translate(0);
+}/*# sourceMappingURL=page-intro.css.map */

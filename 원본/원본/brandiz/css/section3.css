@@ -1,0 +1,38 @@
+.section3 {
+  position: relative;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+.section3 .bg {
+  height: 100%;
+  background-image: url(../img/section3/seciton3_bg.jpg);
+  background-position: center;
+}
+.section3 .gooey {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  filter: url(#goo);
+}
+.section3 .gooey div {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(at 20% 20%, #FFF, rgb(211, 161, 211));
+  animation-name: bubble;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.section3 .gooey div::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.section3 .section3-text {
+  width: min(90%, 900px);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}/*# sourceMappingURL=section3.css.map */

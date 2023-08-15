@@ -1,0 +1,249 @@
+@use "mixin" as m;
+// react라던지 vue때문에 import대신 use를 쓰라고 권고한대
+// mixin 을 import해서 m이라고 부르겠다고 선언한 것
+
+header {
+  position: fixed;
+  z-index: 10; // header는 무조건 z인덱스를 왕창 줘야함
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  transition: background 1s;
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(95%, 1800px);
+    height: 100%; //100%와의 차이 = 패딩 있냐없냐의 ㅊ ㅏ이 ! padding이 있으면 자식이 100의 높이를 가지기때문에 삐져나올거다 / 패딩이나 보더가 없을땐 inherit써두댐
+    margin: 0 auto;
+    h1 {
+      position: relative;
+      z-index: 1;
+      @media #{m.$minLg} {
+        width: 170px;
+      }
+      @media #{m.$maxLg} {
+        width: 130px;
+      }
+      img{
+        width: 100%;
+      }
+      a {
+        position: relative;
+        display: block;
+        svg:first-child {
+          width: 100%;
+          * {
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2px;
+            transition: stroke 1s;
+          } // path line circle
+        } // svg firs-child
+        svg:last-child {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          * {
+            fill: none;
+            stroke: var(--dark-color);
+            stroke-width: 5px;
+            stroke-dasharray: 1;
+            animation: stroke 4s infinite linear;
+            transition: stroke 1s;
+          } // * ( svg안에 전부 ) path / line / circle
+        } // svg
+      } // a
+    } // h1
+  } // center
+  > svg {
+    // header의 직계자식 svg
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    transform: translateY(-20%);
+    max-height: 40px;
+    .line {
+      fill: rgba(#fff, 0);
+      transition: fill 1s;
+      stroke: rgba(m.$maincolor, 0);
+      stroke-width: 5px;
+      stroke-dasharray: 1;
+      // stroke-dashoffset: -0.6;
+    }
+  } //svg
+
+  &.active {
+    background: rgba(#fff, 0.9);
+    .center {
+      h1 {
+        a {
+          svg:first-child {
+            * {
+              stroke: var(--dark-color);
+            }
+          }
+          svg:last-child {
+            * {
+              stroke: var(--main-color);
+            }
+          }
+        } // a
+      } // h1
+    } // center
+
+    > svg {
+      .line {
+        fill: rgba(#fff, 0.9);
+        stroke: rgba(m.$maincolor, 0.7);
+      }
+    }
+  }
+} // header.active
+
+.gnb-lg {
+  display: flex;
+  align-items: center;
+  a {
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--dark-color);
+    transition: color 0.5s;
+    &:hover {
+      color: var(--main-color);
+    } // hover
+    &.active {
+      padding: 5px 7px;
+      border-radius: 5px;
+      background: var(--main-color);
+      color: #fff;
+    }
+  } // a
+  @media #{m.$maxLg} {
+    display: none;
+  } // 1000 이하
+} // gnb-lg
+
+.gnb-sm {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: var(--header-height);
+  width: 100%;
+  background: rgba(#fff, 0.9);
+  a {
+    display: block;
+    height: 45px;
+    padding: 0 20px;
+    line-height: 45px;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--dark-color);
+    border-bottom: 1px solid #ccc;
+    transition: color 0.5s;
+    &:hover {
+      color: var(--main-color);
+    }
+    &.active {
+      background: var(--main-color);
+      color: #fff;
+    }
+  }
+  display: none;
+  @media #{m.$minLg} {
+    display: none !important;
+  } // 1000이상
+} // gnb-sm
+
+.mbtn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  span {
+    position: absolute;
+    left: 0;
+    top: 19px;
+    height: 2px;
+    background: var(--main-color);
+    &.bar1 {
+      width: 20px;
+      margin-top: -10px;
+    }
+    &.bar2 {
+      width: 30px;
+    }
+    &.bar3 {
+      width: 40px;
+      margin-top: 10px;
+    }
+    transition: width 0.3s, margin-top 0.3s, transform 0.3s;
+    transition-delay: 0.3s, 0s, 0s;
+  } // span
+
+  &:hover {
+    span {
+      width: 40px;
+      margin-top: 0;
+      transition-delay: 0s, 0.3s, 0s; // 호버했을때 구분동작 만들기
+    } //hover
+  } // mbtn hover
+
+  &.active {
+    span {
+      width: 40px;
+      margin-top: 0;
+      transition-delay: 0s, 0.3s, 0.6s;
+      &.bar1 {
+        transform: rotate(45deg);
+      }
+      &.bar2 {
+        opacity: 0;
+      }
+      &.bar3 {
+        transform: rotate(-45deg);
+      }
+    } // span
+  } //mbtn:hover
+  @media #{m.$minLg} {
+    display: none;
+  }
+} //mbtn
+
+// scrollspy
+.scrollspy {
+  @include m.posRT(fixed, 1%, 50%, 0, -50%);
+  width: 30px;
+  filter: drop-shadow(1px 1px 0 rgba(#FFF, 0.3)); // 박스 섀도우가 아니고 fill영역에만 새도우가 들어감
+  svg {
+    width: 100%;
+    .curve {
+      fill: none;
+      stroke: var(--sub-color);
+      stroke-width: 3px;
+    }
+    .progress {
+      fill: none;
+      stroke: var(--main-color);
+      stroke-width: 6px;
+      stroke-dasharray: 1;
+      // stroke-dashoffset: 0.7;
+    }
+    .circle {
+      fill: var(--main-color);
+      offset-path: path("M37.5,25c50,50-50,50,0,100s-50,50,0,100s-50,50,0,100s-49.1,50,0,100");
+      // offset-distance: 50%;
+    }
+  }
+  @media #{m.$maxSm} {
+    display: none;
+  }
+  @media #{m.$maxLg} {
+    display: none;
+  }
+} // figure scrollspy

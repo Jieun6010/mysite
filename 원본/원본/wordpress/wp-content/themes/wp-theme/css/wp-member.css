@@ -1,0 +1,275 @@
+@charset "UTF-8";
+/* 100%높이설정 */
+/* button */
+/* 로그인---------------------------------------------- */
+div#wpmem_login {
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #EEE;
+  box-sizing: border-box;
+}
+
+div#wpmem_login form fieldset {
+  margin: 0;
+}
+
+div#wpmem_login form fieldset legend {
+  /* 로그인 타이틀 */
+  text-align: center;
+  font-size: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #CCC;
+}
+
+div#wpmem_login form fieldset legend::before {
+  content: "회원로그인";
+  display: inline-block;
+  font-size: 15px;
+  color: #333;
+  letter-spacing: 0.08em;
+  font-weight: bold;
+}
+
+div#wpmem_login form fieldset > label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.8em;
+  color: #999;
+}
+
+div#wpmem_login form fieldset div.div_text {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+div#wpmem_login form fieldset div.button_div {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted #999;
+}
+
+div#wpmem_login form fieldset div.button_div label {
+  font-size: 0.8em;
+  color: #999;
+}
+
+div#wpmem_login form fieldset div.button_div input[type=submit] {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  background: #333;
+  color: #FFF;
+  transition: all 0.3s;
+}
+
+div#wpmem_login form fieldset div.button_div input[type=submit]:hover {
+  background: var(--blue);
+}
+
+div#wpmem_login .link-text:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* 회원가입, 회원정보---------------------------------------------- */
+div#wpmem_reg {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+div#wpmem_reg form fieldset {
+  margin: 0;
+}
+
+div#wpmem_reg form fieldset legend {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+div#wpmem_reg form fieldset > label {
+  font-size: 0.8em;
+  color: #999;
+  font-weight: 600;
+}
+
+div#wpmem_reg form fieldset div.div_text {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+div#wpmem_reg form fieldset div.button_div {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+div#wpmem_reg form fieldset div.button_div input[type=submit] {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  background: #333;
+  color: #FFF;
+  transition: all 0.3s;
+}
+
+div#wpmem_reg form fieldset div.button_div input[type=submit]:hover {
+  background: var(--blue);
+}
+
+div#wpmem_reg form fieldset div.req-text {
+  display: none;
+}
+
+div#wpmem_login .link-text {
+  font-size: 0.9em;
+  text-align: center;
+  color: #666;
+  font-weight: 600;
+}
+
+.wp-member-profile {
+  display: flex;
+  padding: 50px 0;
+  justify-content: center;
+}
+
+.wp-member-profile ul {
+  width: min(90%, 600px);
+  padding: 20px;
+  background: #EEE;
+  border: 1px solid #CCC;
+}
+
+.wp-member-profile ul::before {
+  content: "회원정보수정";
+  display: block;
+  padding-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-bottom: 1px solid #CCC;
+}
+
+.wp-member-profile ul li {
+  margin: 10px 0;
+}
+
+.wp-member-profile ul li a {
+  display: block;
+  padding: 7px;
+  background: #222;
+  color: #FFF;
+}
+
+.wp-member-profile ul li a:hover {
+  background: var(--blue);
+}
+
+/* 로그인 후 화면--------------------- */
+.logged-container {
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background: #EEE;
+  border: 1px solid #CCC;
+}
+
+b.login-message {
+  color: #666;
+  font-weight: bold;
+}
+
+b.login-id {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+b.login-id::after, b.login-id::before {
+  content: "'";
+}
+
+#wpmem_login + #wpmem_reg {
+  display: none;
+}
+
+/* 회원가입 후 메세지 */
+.wpmem_msg {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+/* 로그인 후 회원가입 페이지 접속시 화면 */
+.register_status {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+  padding-bottom: 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  background: #EEE;
+  border: 1px solid #CCC;
+  border-bottom: none;
+}
+
+.register_status::after {
+  content: "";
+  display: block;
+  margin-top: 20px;
+  border-bottom: 1px dotted #999;
+}
+
+.register_links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #EEE;
+  border: 1px solid #CCC;
+  border-top: none;
+}
+
+.register_links li {
+  margin: 0 5px;
+  display: flex;
+}
+
+.register_links li a {
+  flex: 1;
+  
+  padding: 5px 0;
+  text-align: center;
+  background: #000;
+  color: #FFF;
+  border-radius: 5px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.register_links li a:hover {
+  background: #FFF;
+  color: #FFF
+}/*# sourceMappingURL=wp-member.css.map */

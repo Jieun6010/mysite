@@ -1,0 +1,41 @@
+.faq_list li button{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  color: #FFF;
+  background: var(--main-color);
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  } /* 밑줄 이따 물어보기 */ 
+  
+  .faq_list li p{
+    display: none;
+    padding: 10px;
+    background: #EEE;
+  }
+
+  .faq_list li button::after{
+    content: "\2b"; 
+    float: right;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;   
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+  }
+
+  .faq_list li button.active{
+    background: var(--point-color);
+  }
+
+  .faq_list li button.active::after{
+    content: "\f068";
+  }
+
+  
+
+  
+
+  
